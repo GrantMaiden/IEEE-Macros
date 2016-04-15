@@ -1,3 +1,6 @@
+' IEEE_Template Macro
+' Author: GrantMaiden
+' This Macro aims to generate an IEEE template form for any Word Document
 Attribute VB_Name = "NewMacros"
 Sub IEEE_Template()
 Attribute IEEE_Template.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.IEEE_Template"
@@ -5,6 +8,7 @@ Attribute IEEE_Template.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.IEEE_Temp
 ' IEEE_Template Macro
 '
 '
+'   Change Font
     Selection.WholeStory
     Selection.Font.Name = "Times New Roman"
     Selection.ParagraphFormat.Alignment = wdAlignParagraphJustify
@@ -15,6 +19,8 @@ Attribute IEEE_Template.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.IEEE_Temp
         End If
         .NameFarEast = ""
     End With
+    '
+    ' Page Setup
     With ActiveDocument.PageSetup
         .LineNumbering.Active = False
         .Orientation = wdOrientPortrait
@@ -47,6 +53,8 @@ Attribute IEEE_Template.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.IEEE_Temp
     If ActiveWindow.ActivePane.View.Type <> wdPrintView Then
         ActiveWindow.ActivePane.View.Type = wdPrintView
     End If
+    '
+    ' Change Column
     With Selection.PageSetup.TextColumns
         .SetCount NumColumns:=2
         .EvenlySpaced = True
@@ -54,6 +62,8 @@ Attribute IEEE_Template.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.IEEE_Temp
         .Width = InchesToPoints(3.5)
         .Spacing = InchesToPoints(0.25)
     End With
+    '
+    ' Change Spacing
     Application.Move Left:=306, Top:=16
     Application.Move Left:=258, Top:=16
     Selection.TypeText Text:=vbTab
