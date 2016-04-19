@@ -1,6 +1,6 @@
-Attribute VB_Name = "NewMacros"
+
 Sub IEEE_Template()
-Attribute IEEE_Template.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.IEEE_Template"
+
 '
 ' IEEE_Template Macro
 '
@@ -56,7 +56,6 @@ Attribute IEEE_Template.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.IEEE_Temp
     End With
     Application.Move Left:=306, Top:=16
     Application.Move Left:=258, Top:=16
-    Selection.TypeText Text:=vbTab
     With Selection.ParagraphFormat
         .LeftIndent = InchesToPoints(0)
         .RightIndent = InchesToPoints(0)
@@ -87,9 +86,6 @@ Attribute IEEE_Template.VB_ProcData.VB_Invoke_Func = "Normal.NewMacros.IEEE_Temp
     ActiveWindow.ActivePane.VerticalPercentScrolled = 0
     Selection.Fields.Add Range:=Selection.Range, Type:=wdFieldBibliography, _
         Text:=" \l 1033"
-    Selection.TypeBackspace
-    Selection.TypeBackspace
-    Selection.TypeBackspace
-    Selection.TypeBackspace
-    Selection.TypeBackspace
+
 End Sub
+
